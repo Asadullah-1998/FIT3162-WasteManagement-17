@@ -10,92 +10,140 @@
 9        android:targetSdkVersion="28" />
 9-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-11-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:5:5-78
-11-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:5:22-76
-12    <uses-permission android:name="android.permission.INTERNET" />
-12-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:6:5-66
-12-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:6:22-64
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:5:5-66
+11-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="Manifest.permission#ACCESS_FINE_LOCATION" />
+12-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:6:5-79
+12-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:6:22-77
 13
-14    <!-- Include required permissions for Google Maps API to run. -->
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
-15-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
-16
-17    <uses-feature
-17-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
-18        android:glEsVersion="0x00020000"
-18-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
-19        android:required="true" />
-19-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
-20
-21    <application
-21-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:8:5-31:19
-22        android:allowBackup="true"
-22-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:9:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.1.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\34b4ab0d8b65ac74ddd00d45b26dd963\core-1.1.0\AndroidManifest.xml:24:18-86
-24        android:debuggable="true"
-25        android:extractNativeLibs="false"
-26        android:icon="@mipmap/ic_launcher"
-26-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:10:9-43
-27        android:label="@string/app_name"
-27-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:11:9-41
-28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:12:9-54
-29        android:supportsRtl="true"
-29-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:13:9-35
-30        android:theme="@style/AppTheme" >
-30-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:14:9-40
-31        <meta-data
-31-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:9-18:70
-32            android:name="com.google.android.geo.API_KEY"
-32-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:13-58
-33            android:value="AIzaSyC4NFeXRpLt9RCSygToBz9v94uVy-bSNus" />
-33-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:13-68
-34
-35        <activity
-35-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:21:9-30:20
-36            android:name="com.example.myapplication.MainActivity"
-36-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:22:13-41
-37            android:label="@string/app_name"
-37-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:23:13-45
-38            android:theme="@style/AppTheme.NoActionBar" >
-38-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:24:13-56
-39            <intent-filter>
-39-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:25:13-29:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:26:17-69
-40-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:26:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:28:17-77
-42-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:28:27-74
-43            </intent-filter>
-44        </activity>
-45        <!-- Needs to be explicitly declared on P+ -->
-46        <uses-library
-46-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-47            android:name="org.apache.http.legacy"
-47-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-48            android:required="false" />
-48-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\cad243eba5d5e9d30aead8f2caf75568\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-49
-50        <activity
-50-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d810550874c071a7f5afc391a91fdc61\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-51            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-51-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d810550874c071a7f5afc391a91fdc61\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-52            android:exported="false"
-52-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d810550874c071a7f5afc391a91fdc61\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-53            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-53-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d810550874c071a7f5afc391a91fdc61\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-54
-55        <meta-data
-55-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\5feaec8abf5f0f657ccb7d51c61164e6\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-56            android:name="com.google.android.gms.version"
-56-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\5feaec8abf5f0f657ccb7d51c61164e6\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-57            android:value="@integer/google_play_services_version" />
-57-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\5feaec8abf5f0f657ccb7d51c61164e6\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-58    </application>
+14    <uses-feature android:glEsVersion="0x00020000" />
+14-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:11:5-54
+14-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:11:19-51
+15
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:14:5-81
+16-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:14:22-78
+17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+17-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:15:5-79
+17-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:15:22-76
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:16:5-79
+18-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:16:22-76
+19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+19-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:17:5-76
+19-->[com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:17:22-73
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->[com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e1627eaf4872705830dede81178a1848\jetified-sdk-routing-2.4458\AndroidManifest.xml:21:5-81
+20-->[com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e1627eaf4872705830dede81178a1848\jetified-sdk-routing-2.4458\AndroidManifest.xml:21:22-78
+21    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+22    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+22-->[com.tomtom.online:sdk-location:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2ab9e34f77956a8d531e1067c3c320d7\jetified-sdk-location-2.4458\AndroidManifest.xml:13:5-94
+22-->[com.tomtom.online:sdk-location:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2ab9e34f77956a8d531e1067c3c320d7\jetified-sdk-location-2.4458\AndroidManifest.xml:13:22-91
+23
+24    <uses-feature android:name="android.hardware.location.gps" />
+24-->[com.tomtom.online:sdk-location-basic:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d578d367990f8b2777e9c722a131e867\jetified-sdk-location-basic-2.4458\AndroidManifest.xml:14:5-66
+24-->[com.tomtom.online:sdk-location-basic:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d578d367990f8b2777e9c722a131e867\jetified-sdk-location-basic-2.4458\AndroidManifest.xml:14:19-63
+25
+26    <application
+26-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:8:5-34:19
+27        android:allowBackup="true"
+27-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:9:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.3.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\b4b501b9ffccbf729a739e59de5fa42b\core-1.3.0\AndroidManifest.xml:24:18-86
+29        android:debuggable="true"
+30        android:extractNativeLibs="false"
+31        android:icon="@mipmap/ic_launcher"
+31-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:10:9-43
+32        android:label="@string/app_name"
+32-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:11:9-41
+33        android:roundIcon="@mipmap/ic_launcher_round"
+33-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:12:9-54
+34        android:supportsRtl="true"
+34-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:13:9-35
+35        android:testOnly="true"
+36        android:theme="@style/AppTheme" >
+36-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:14:9-40
+37        <meta-data
+37-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:9-101
+38            android:name="OnlineMaps.Key"
+38-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:20-49
+39            android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
+39-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:50-98
+40        <meta-data
+40-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:9-103
+41            android:name="OnlineSearch.Key"
+41-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:20-51
+42            android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
+42-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:52-100
+43        <meta-data
+43-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:9-104
+44            android:name="OnlineRouting.Key"
+44-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:20-52
+45            android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
+45-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:53-101
+46
+47        <activity
+47-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:22:9-31:20
+48            android:name="com.example.myapplication.StartingActivity"
+48-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:23:13-45
+49            android:label="@string/app_name"
+49-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:24:13-45
+50            android:theme="@style/AppTheme.NoActionBar" >
+50-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:25:13-56
+51            <intent-filter>
+51-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:26:13-30:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:27:17-69
+52-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:27:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:29:17-77
+54-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:29:27-74
+55            </intent-filter>
+56        </activity>
+57        <activity android:name="com.example.myapplication.MainActivity" >
+57-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:32:9-33:20
+57-->D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:32:19-47
+58        </activity>
 59
-60</manifest>
+60        <service android:name="com.tomtom.online.sdk.search.extensions.SearchService" />
+60-->[com.tomtom.online:sdk-search:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\ae5dcd959ca0facd51b41debce7c8963\jetified-sdk-search-2.4458\AndroidManifest.xml:16:9-89
+60-->[com.tomtom.online:sdk-search:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\ae5dcd959ca0facd51b41debce7c8963\jetified-sdk-search-2.4458\AndroidManifest.xml:16:18-86
+61
+62        <meta-data
+62-->[com.tomtom.online:sdk-location-gms:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\84fa8801237652051bbbbb46a1d7baa4\jetified-sdk-location-gms-2.4458\AndroidManifest.xml:18:9-20:69
+63            android:name="com.google.android.gms.version"
+63-->[com.tomtom.online:sdk-location-gms:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\84fa8801237652051bbbbb46a1d7baa4\jetified-sdk-location-gms-2.4458\AndroidManifest.xml:19:13-58
+64            android:value="@integer/google_play_services_version" />
+64-->[com.tomtom.online:sdk-location-gms:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\84fa8801237652051bbbbb46a1d7baa4\jetified-sdk-location-gms-2.4458\AndroidManifest.xml:20:13-66
+65
+66        <activity
+66-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\3d0671b1c359031c4371d188501b78b6\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+67            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+67-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\3d0671b1c359031c4371d188501b78b6\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+68            android:exported="false"
+68-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\3d0671b1c359031c4371d188501b78b6\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+69            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+69-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\3d0671b1c359031c4371d188501b78b6\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+70
+71        <provider
+71-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:14:9-22:20
+72            android:name="androidx.core.content.FileProvider"
+72-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:15:13-62
+73            android:authorities="com.example.myapplication.provider"
+73-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:16:13-60
+74            android:exported="false"
+74-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:17:13-37
+75            android:grantUriPermissions="true" >
+75-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:18:13-47
+76            <meta-data
+76-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:19:13-21:58
+77                android:name="android.support.FILE_PROVIDER_PATHS"
+77-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:20:17-67
+78                android:resource="@xml/provider_paths" />
+78-->[com.tomtom.online:sdk-common:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\9993b41f3e9326af29363303c0defcbd\jetified-sdk-common-2.4458\AndroidManifest.xml:21:17-55
+79        </provider>
+80    </application>
+81
+82</manifest>

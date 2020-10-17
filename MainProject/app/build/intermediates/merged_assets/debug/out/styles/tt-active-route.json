@@ -1,0 +1,62 @@
+{
+    "version": 8,
+    "sources": {
+        "tomtom-RANDOM-active-route": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [ 
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [[4.908130, 52.376452], [13.461385, 52.495125]]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "tomtom-RANDOM-active-route-outline",
+            "type": "line",
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round",
+                "visibility": "none"
+            },
+            "paint": {
+                "line-color":  "#0D6567",
+                "line-width": {
+                    "stops": [
+                        [1,9],
+                        [10,11],
+                        [22,28]
+                    ]
+                }
+            },
+            "source": "tomtom-RANDOM-active-route"
+        },
+        {
+            "id": "tomtom-RANDOM-active-route-fill",
+            "type": "line",
+            "layout": {
+              "line-cap": "round",
+              "line-join": "round",
+              "visibility": "none"
+            },
+            "paint": {
+                "line-color": "#1ACBCF",
+                "line-width": {
+                    "stops": [
+                        [1,5],
+                        [10,7],
+                        [22,24]
+                    ]
+                }
+            },
+            "source": "tomtom-RANDOM-active-route"
+        }
+    ]
+}

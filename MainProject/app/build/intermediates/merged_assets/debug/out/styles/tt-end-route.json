@@ -1,0 +1,30 @@
+{
+    "version": 8,
+    "sources": {
+        "tomtom-RANDOM-end-route": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [ {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [19.449006, 51.759396]
+                    }
+                }]
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "tomtom-RANDOM-end-route-layer",
+            "type": "symbol",
+            "layout": {
+                "icon-image": "end_route",
+                "icon-allow-overlap": true,
+                "visibility": "none"
+             },
+            "source": "tomtom-RANDOM-end-route"
+        }
+    ]
+}

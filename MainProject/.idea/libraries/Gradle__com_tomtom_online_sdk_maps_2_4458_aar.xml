@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tomtom.online:sdk-maps:2.4458@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2042b5386d54730ddbf0f144b6c2ad53/jetified-sdk-maps-2.4458/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2042b5386d54730ddbf0f144b6c2ad53/jetified-sdk-maps-2.4458/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-maps/2.4458/a8aaf3d61e0df30e3c0bcff39cd24d54470b0af4/sdk-maps-2.4458-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-maps/2.4458/501ebd01a794199f13cef74a0f8c27fb14a78c43/sdk-maps-2.4458-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

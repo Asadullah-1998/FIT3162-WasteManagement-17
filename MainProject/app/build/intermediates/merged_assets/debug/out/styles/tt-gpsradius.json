@@ -1,0 +1,34 @@
+{
+    "version": 8,
+    "sources": {
+        "tomtom-RANDOM-gpsradius": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [ {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [0, 0]
+                    }
+                }]
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "tomtom-RANDOM-gpsradius-layer",
+            "type": "circle",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "circle-radius": 0,
+                "circle-color": ["case", ["has", "dimmed"], "rgba(128, 128, 128, 0.3)", "rgba(0, 162, 189, 0.3)"],
+                "circle-pitch-alignment": "map"
+            },
+            "source": "tomtom-RANDOM-gpsradius"
+        }    
+    ]
+}
+

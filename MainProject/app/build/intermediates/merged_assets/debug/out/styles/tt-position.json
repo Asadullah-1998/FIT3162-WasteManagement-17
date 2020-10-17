@@ -1,0 +1,33 @@
+{
+    "version": 8,
+    "sources": {
+        "tomtom-RANDOM-position": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [ {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [0, 0]
+                    }
+                }]
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "tomtom-RANDOM-position-layer",
+            "type": "symbol",
+            "layout": {
+                "icon-image": "position_color",
+                "icon-allow-overlap": true,
+                "icon-pitch-alignment": "map",
+                "icon-rotation-alignment": "map",
+                "visibility": "none"
+             },
+            "source": "tomtom-RANDOM-position"
+        }
+    ]
+}
+

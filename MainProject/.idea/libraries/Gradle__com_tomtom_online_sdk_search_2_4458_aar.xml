@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tomtom.online:sdk-search:2.4458@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ae5dcd959ca0facd51b41debce7c8963/jetified-sdk-search-2.4458/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ae5dcd959ca0facd51b41debce7c8963/jetified-sdk-search-2.4458/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-search/2.4458/1bec85a45a739653d309601d3fd59cc02b7155a4/sdk-search-2.4458-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-search/2.4458/65f448ebd6c7546a053363eb90d46d140e8d18ab/sdk-search-2.4458-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

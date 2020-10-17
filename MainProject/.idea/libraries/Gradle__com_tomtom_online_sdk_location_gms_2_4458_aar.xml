@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tomtom.online:sdk-location-gms:2.4458@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/84fa8801237652051bbbbb46a1d7baa4/jetified-sdk-location-gms-2.4458/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/84fa8801237652051bbbbb46a1d7baa4/jetified-sdk-location-gms-2.4458/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-location-gms/2.4458/1cee245e796590150a72b9bf61ae1524cb94337d/sdk-location-gms-2.4458-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-location-gms/2.4458/ebe89d20e2d3c4d6a629ca0db061b9670a0dba44/sdk-location-gms-2.4458-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

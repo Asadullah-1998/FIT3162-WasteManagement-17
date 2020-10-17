@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="Manifest.permission#ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -13,13 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC4NFeXRpLt9RCSygToBz9v94uVy-bSNus"/>
+        <meta-data android:name="OnlineMaps.Key" android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
+        <meta-data android:name="OnlineSearch.Key" android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
+        <meta-data android:name="OnlineRouting.Key" android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
+
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".StartingActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -27,6 +28,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 

@@ -1,0 +1,30 @@
+{
+    "version": 8,
+    "sources": {
+        "tomtom-RANDOM-start-route": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [ {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [4.908130, 52.376452]
+                    }
+                }]
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "tomtom-RANDOM-start-route-layer",
+            "type": "symbol",
+            "layout": {
+                "icon-image": "start_route",
+                "icon-allow-overlap": true,
+                "visibility": "none"
+             },
+            "source": "tomtom-RANDOM-start-route"
+        }
+    ]
+}

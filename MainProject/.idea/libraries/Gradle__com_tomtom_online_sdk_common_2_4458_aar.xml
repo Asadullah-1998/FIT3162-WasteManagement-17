@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tomtom.online:sdk-common:2.4458@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9993b41f3e9326af29363303c0defcbd/jetified-sdk-common-2.4458/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9993b41f3e9326af29363303c0defcbd/jetified-sdk-common-2.4458/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-common/2.4458/f4e3137def78265e40352993ca905509d6674b8c/sdk-common-2.4458-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomtom.online/sdk-common/2.4458/ac19086b20cc81321fba2c81d0a3aea420bf5483/sdk-common-2.4458-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
