@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
 
         <meta-data android:name="OnlineMaps.Key" android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />
         <meta-data android:name="OnlineSearch.Key" android:value="vYMre96nwZPknOzlKY9OJ8zm5GZlQBib" />

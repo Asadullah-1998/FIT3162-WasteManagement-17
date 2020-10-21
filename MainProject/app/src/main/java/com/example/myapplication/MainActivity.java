@@ -77,11 +77,13 @@ public class MainActivity extends AppCompatActivity implements
     private Location currentLocation;
     private Location targetLocation;
 
+
+    private int collectedId = 0;
+
     private ActionBar ab;
 
 
-    //public String serverDomain = "ec2-13-210-198-230.ap-southeast-2.compute.amazonaws.com:8080";
-    public String serverDomain = "13.210.198.230:8080";
+    public String serverDomain = "ec2-54-252-219-65.ap-southeast-2.compute.amazonaws.com:8080";
     private int truckID;
     private String truckStatus;
 
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements
             StrictMode.setThreadPolicy(policy);
         }
 
-        //registerTruck();
+        registerTruck();
 
 
 
@@ -155,31 +157,9 @@ public class MainActivity extends AppCompatActivity implements
         this.tomtomMap = tomtomMap;
         this.tomtomMap.setMyLocationEnabled(true);
 
-
-        /*if (tomtomMap.getUserLocation() != null){
-            mainView.setText("i AM INIT");
-        } else{
-            mainView.setText("i AM Not INIT");
-        }*/
-        //registerTruck();
-        //currentLocation = tomtomMap.getUserLocation();
-        //initSetViews();
-        //setCurrentLocation();
-        //tomtomMap.centerOnMyLocation();
-        //registerTruck();
-        //centerOnLocation();
-        //this.tomtomMap.addOnMapLongClickListener(this);
         this.tomtomMap.addOnMapClickListener(this);
         this.tomtomMap.getMarkerSettings().setMarkersClustering(true);
 
-        //startUpdate();
-
-        /*if (tomtomMap.getUserLocation() != null){
-            mainView.setText("i AM INIT");
-        } else{
-            mainView.setText("i AM Not INIT");
-            //onMapReady(tomtomMap);
-        }*/
     }
 
     void setOnMapChangedListener(TomtomMapCallback.OnMapChangedListener onMapChangedListener){
@@ -187,7 +167,6 @@ public class MainActivity extends AppCompatActivity implements
             mainView.setText("i AM INIT");
         } else{
             mainView.setText("i AM Not INIT");
-            //onMapReady(tomtomMap);
         }
         tomtomMap.centerOnMyLocation();
         centerOnLocation();
@@ -197,18 +176,15 @@ public class MainActivity extends AppCompatActivity implements
     public void onMapClick(@NonNull LatLng latLng) {
         if (tomtomMap.getUserLocation() != null) {
             currentLocation = tomtomMap.getUserLocation();
-            //centerOnLocation();
             tomtomMap.centerOnMyLocation();
         }
 
     }
 
     public void startUpdate(){
-        //tomtomMap.centerOnMyLocation();
         currentLocation = tomtomMap.getUserLocation();
         if (currentLocation != null){
             tomtomMap.centerOnMyLocation();
-            //tomtomMap.centerOnMyLocation();
             centerOnLocation();
         } else {
             startUpdate();
@@ -217,8 +193,6 @@ public class MainActivity extends AppCompatActivity implements
 
 
     public void onLocationChanged(Location location) {
-        //String temp = String.format("%.4f, %.4f", location.getLatitude(), location.getLongitude());
-        //truckLocationView.setText(temp);
         currentLocation = tomtomMap.getUserLocation();
         centerOnLocation();
     }
@@ -238,41 +212,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void centerOnLocation(){
-        /*if (tomtomMap.getUserLocation() != null){
-            tomtomMap.centerOn(CameraPosition.builder()
-                    .focusPosition(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()))
-                    .zoom(10)
-                    .bearing(3)
-                    .build());
-        }*/
-
         mainView.setText(tomtomMap.getUserLocation().toString());
-
-
-        /*if (targetLocation == null){
-            /*tomtomMap.centerOn(CameraPosition.builder()
-                    .focusPosition(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()))
-                    .zoom(10)
-                    .bearing(3)
-                    .build());*/
-
-        //  LatLng focPos = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
-        //CameraPosition camPos = CameraPosition.builder().focusPosition(focPos).build();
-        //CameraPosition camPos = CameraPosition.builder().build();
-        //tomtomMap.centerOn(camPos);
-        //LatLng focPos = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
-        //CameraPosition camPos = new CameraPosition(facPos,10,2,2,3);
-        //}
-
-       /* tomtomMap.centerOn(CameraPosition.builder()
-                .focusPosition(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()))
-                .zoom(10)
-                .bearing(3)
-                .build());*/
-
-
-        //tomtomMap.centerOn(CameraPosition)
-        //cameraFocusArea, //new AnimationDuration(1500, TimeUnit.MILLISECONDS));
     }
 
     private boolean isDestinationPositionSet() {
@@ -337,8 +277,6 @@ public class MainActivity extends AppCompatActivity implements
     private void initTomTomServices() {
         MapFragment mapFragment = (MapFragment) getSupportFragmentManager().findFragmentById(R.id.mapFragment);
         mapFragment.getAsyncMap(this);
-        //currentLocation = tomtomMap.getUserLocation();
-        //centerOnLocation();
 
         searchApi = OnlineSearchApi.create(this);
         routingApi = OnlineRoutingApi.create(this);
@@ -352,39 +290,11 @@ public class MainActivity extends AppCompatActivity implements
 
     private void clearMap() {
         tomtomMap.clear();
-        //departurePosition = null;
+        departurePosition = null;
         destinationPosition = null;
         route = null;
     }
 
-    /*public void addressButtonOnClick(View view){
-        addressEdit  = (EditText) findViewById(R.id.addressEdit);
-        targetAddress = addressEdit.getText().toString();
-
-        currentLocation = tomtomMap.getUserLocation();
-
-        departurePosition = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-
-        if (currentLocation == null){
-            //destinationLocationView.setText("I am not working");
-        } else{
-            //setCurrentLocation();
-        }
-
-
-        createMarkerIfNotPresent(departurePosition, departureIcon);
-
-
-        sendAlertToServer(Integer.toString(truckID), String.valueOf(currentLocation.getLatitude()),
-                String.valueOf(currentLocation.getLongitude()), "active", "0");
-
-
-        if (targetAddress != null){
-            //destinationPosition = getLocationFromAddress(this, targetAddress);
-            //createMarkerIfNotPresent(destinationPosition, destinationIcon);
-            //drawRoute(departurePosition, destinationPosition);
-        }
-    }*/
 
 
     public LatLng getLocationFromAddress(Context context, String strAddress){
@@ -405,38 +315,49 @@ public class MainActivity extends AppCompatActivity implements
         return p1;
     }
 
-    public void sendAlertToServer(String id, String lat, String long1, String status, String collectedID){
+    public LatLng sendAlertToServer(String id, String lat, String long1, String status, String collectedID){
         String param = "/truck-status?id="+id+"&status="+status+"&Latitude="+lat+"&Longitude="+long1;
-        //http://ec2-54-252-248-106.ap-southeast-2.compute.amazonaws.com/register-truck?
-        // id=5&status=active&Latitude=34.201&Longitude=151.410
+
+        if (!(collectedID.equals("0"))){
+            param = param +"&collected="+collectedID;
+        }
+
         String temp = "http://"+serverDomain+param;
-        String in = getInput(temp);
-        //String in = temp;
-        String text = mainView.getText().toString() + "\n";
-        mainView.setText(text+""+in);
-
-        //String t1 = "2 -38.1526 145.1361 6 34.088 151.410";
-        /*8String[] t2 = in.split(" ");
-        Double newLat = Double.parseDouble(t2[1]);
-        Double newLong = Double.parseDouble(t2[2]);*/
-
-        //mainView.setText(t2[1]+t2[2]);
-
-        //LatLng newLatLng = new LatLng(newLat,newLong);
-
-        //return newLatLng;
 
 
+        try {
+            String in = getInput(temp);
+            String text = mainView.getText().toString() + "\n";
+            mainView.setText(text + "" + in);
 
+            String ok = "ok";
+
+            if (ok.equals(in.toLowerCase())){
+                if (!(collectedID.equals("0"))){
+                    mainView.setText("Journey is complete");
+                }
+                return null;
+            }
+
+            String[] t2 = in.split(" ");
+            collectedId = Integer.parseInt(t2[0]);
+            Double newLat = Double.parseDouble(t2[1]);
+            Double newLong = Double.parseDouble(t2[2]);
+
+            return new LatLng(newLat, newLong);
+
+        } catch (Exception e){
+            mainView.setText(e.toString());
+        }
+
+        return null;
     }
 
     public void registerTruck(){
         String temp = "http://"+serverDomain+"/register-truck";
-        //String in = getInput(temp);
+
 
         String in = getInput(temp);
-        //String in = temp;
-        //truckIDView.setText(in);
         String text = mainView.getText().toString() + "\n";
         mainView.setText(text+"Registration Number: "+in);
 
@@ -453,10 +374,9 @@ public class MainActivity extends AppCompatActivity implements
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            //String tempReturn = IOUtils.toString(in);
             String tempReturn = new String(ByteStreams.toByteArray(in), Charsets.UTF_8);
+            mainView.setText(tempReturn);
             return tempReturn;
-            //readStream(in);
         } catch(Exception e){
             mainView.setText(e.toString());
         }
@@ -465,27 +385,36 @@ public class MainActivity extends AppCompatActivity implements
 
     public void updateButtonOnClick(View view){
 
+        if (tomtomMap.getUserLocation() != null){
+            tomtomMap.centerOnMyLocation();
+        }
+
         clearMap();
         currentLocation = tomtomMap.getUserLocation();
         departurePosition = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        destinationPosition = pickUpLocations1[currentLocationIndex];
+
 
         createMarkerIfNotPresent(departurePosition, departureIcon);
 
-        //createMarkerIfNotPresent(destinationPosition, destinationIcon);
-        //drawRoute(departurePosition, destinationPosition);
 
         try {
             String intString = Integer.toString(truckID);
             String latString = String.format("%f", currentLocation.getLatitude());
             String longString = String.format("%f", currentLocation.getLongitude());
+            String collectedString = Integer.toString(collectedId);
             String text = mainView.getText().toString() + "\n";
             mainView.setText(text+"Registration Number: "+ intString + latString + longString);
 
-            sendAlertToServer(intString, latString, longString, "active", "0");
 
-            //createMarkerIfNotPresent(destinationPosition, destinationIcon);
-            //drawRoute(departurePosition, destinationPosition);
+            destinationPosition = sendAlertToServer(intString, latString, longString, "active", collectedString);
+
+            if (destinationPosition == null){
+                return;
+            }
+
+            createMarkerIfNotPresent(destinationPosition, destinationIcon);
+            drawRoute(departurePosition, destinationPosition);
+
 
         } catch (Exception e){
             String text = mainView.getText().toString() + "\n";
@@ -493,19 +422,7 @@ public class MainActivity extends AppCompatActivity implements
         }
 
 
-        //String para = Integer.toString(truckID) + String.format("%f",currentLocation.getLatitude()) +
-        //      String.format("%f",currentLocation.getLongitude()) + "active" + "0";
 
-        //String text = mainView.getText().toString() + "\n";
-        //mainView.setText(text+"Registration Number: "+ intString);
-
-        /*sendAlertToServer(Integer.toString(truckID), String.valueOf(currentLocation.getLatitude()),
-                String.valueOf(currentLocation.getLongitude()), "active", "0");*/
-
-        createMarkerIfNotPresent(destinationPosition, destinationIcon);
-        drawRoute(departurePosition, destinationPosition);
-
-        currentLocationIndex++;
     }
 
 
@@ -514,67 +431,5 @@ public class MainActivity extends AppCompatActivity implements
 
     public void initSetViews(){
         mainView = (TextView) findViewById(R.id.textViewMain);
-        //endButton = (TextView) findViewById(R.id.truckLocationView);
-        //destinationLocationView = (TextView) findViewById(R.id.destinationLocationView);
     }
-
-    /*StringReuest stringRequest = new StringRequest(TextLinks.Request.Method.GET, url,
-            new Responqse.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    // Display the first 500 characters of the response string.
-                    textView.setText("Response is: "+ response.substring(0,500));
-                }
-            }, new Response.ErrorListener() {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            textView.setText("That didn't work!");
-        }
-    });*/
-
-
-    /*public class GetInputFrom extends AsyncTask {
-
-        @Override
-        protected Object doInBackground(Object... urls) {
-            try {
-                URL url = new URL(urls[0]);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                //String tempReturn = IOUtils.toString(in);
-                String tempReturn = new String(ByteStreams.toByteArray(in), Charsets.UTF_8);
-                return tempReturn;
-                //readStream(in);
-            } catch(Exception e){
-                //mainView.setText(e.toString());
-            }
-            return null;
-        }
-
-        /*protected String doInBackground(String... urls){
-            try {
-                URL url = new URL(urls[0]);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                //String tempReturn = IOUtils.toString(in);
-                String tempReturn = new String(ByteStreams.toByteArray(in), Charsets.UTF_8);
-                return tempReturn;
-                //readStream(in);
-            } catch(Exception e){
-                //mainView.setText(e.toString());
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-        }
-    }*/
-
-
-
-
 }

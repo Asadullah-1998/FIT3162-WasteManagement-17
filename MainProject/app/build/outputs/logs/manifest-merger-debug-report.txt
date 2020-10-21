@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [com.tomtom.online:sdk-maps:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\2042b5386d54730ddbf0f144b6c2ad53\jetified-sdk-maps-2.4458\AndroidManifest.xml:2:1-19:12
 MERGED from [com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e1627eaf4872705830dede81178a1848\jetified-sdk-routing-2.4458\AndroidManifest.xml:12:1-28:12
 MERGED from [com.tomtom.online:sdk-search:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\ae5dcd959ca0facd51b41debce7c8963\jetified-sdk-search-2.4458\AndroidManifest.xml:2:1-19:12
@@ -72,20 +72,20 @@ MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.15] C:\Users\ASAD\.gr
 MERGED from [com.tomtom.online:sdk-maps-styles-extensions:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\761a5cef8a4799bd77c97fe65f825cad\jetified-sdk-maps-styles-extensions-2.4458\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\d06b4eaf3d198c3fd9dc41c28e6252e3\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.tony19:logback-android:2.0.0] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e6e43180379e533120cd3a52158fd740\jetified-logback-android-2.0.0\AndroidManifest.xml:2:1-11:12
-INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:11-69
@@ -106,7 +106,7 @@ ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src
 	android:name
 		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:6:22-77
 application
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:8:5-34:19
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:8:5-35:19
 MERGED from [com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e1627eaf4872705830dede81178a1848\jetified-sdk-routing-2.4458\AndroidManifest.xml:23:5-26:19
 MERGED from [com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e1627eaf4872705830dede81178a1848\jetified-sdk-routing-2.4458\AndroidManifest.xml:23:5-26:19
 MERGED from [com.tomtom.online:sdk-search:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\ae5dcd959ca0facd51b41debce7c8963\jetified-sdk-search-2.4458\AndroidManifest.xml:13:5-17:19
@@ -155,46 +155,48 @@ MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ASAD\.gradle\caches\t
 		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
 		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:14:9-40
+	android:usesCleartextTraffic
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:15:9-44
 meta-data#OnlineMaps.Key
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:9-101
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:9-101
 	android:value
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:50-98
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:50-98
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:16:20-49
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:20-49
 meta-data#OnlineSearch.Key
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:9-103
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:9-103
 	android:value
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:52-100
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:52-100
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:17:20-51
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:20-51
 meta-data#OnlineRouting.Key
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:9-104
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:19:9-104
 	android:value
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:53-101
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:19:53-101
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:18:20-52
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:19:20-52
 activity#com.example.myapplication.StartingActivity
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:22:9-31:20
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:23:9-32:20
 	android:label
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:24:13-45
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:25:13-45
 	android:theme
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:25:13-56
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:26:13-56
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:23:13-45
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:24:13-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:26:13-30:29
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:30:27-74
 activity#com.example.myapplication.MainActivity
-ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:32:9-33:20
+ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:33:9-34:20
 	android:name
-		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:32:19-47
+		ADDED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:33:19-47
 uses-sdk
 INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml
@@ -388,7 +390,7 @@ ADDED from [com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\t
 	android:name
 		ADDED from [com.tomtom.online:sdk-routing:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\e1627eaf4872705830dede81178a1848\jetified-sdk-routing-2.4458\AndroidManifest.xml:21:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-36:12 reason: com.tomtom.online.sdk.routing requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\Monash\FIT3162 FYP2\FIT3162-WasteManagement-17\MainProject\app\src\main\AndroidManifest.xml:2:1-37:12 reason: com.tomtom.online.sdk.routing requested WRITE_EXTERNAL_STORAGE
 service#com.tomtom.online.sdk.search.extensions.SearchService
 ADDED from [com.tomtom.online:sdk-search:2.4458] C:\Users\ASAD\.gradle\caches\transforms-2\files-2.1\ae5dcd959ca0facd51b41debce7c8963\jetified-sdk-search-2.4458\AndroidManifest.xml:16:9-89
 	android:name
