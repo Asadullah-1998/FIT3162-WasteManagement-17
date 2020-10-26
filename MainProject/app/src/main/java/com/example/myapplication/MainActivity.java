@@ -106,9 +106,9 @@ public class MainActivity extends AppCompatActivity implements
         truckID is the id that is designated to the truck by the server. The server will identify the truck using this id.
         collectedID is the id of the street that the truck last collected from.
     */
-    public String serverDomain = "ec2-54-252-219-65.ap-southeast-2.compute.amazonaws.com:8080";
+    public String serverDomain = "ec2-3-25-124-215.ap-southeast-2.compute.amazonaws.com:8080";//"ec2-54-252-219-65.ap-southeast-2.compute.amazonaws.com:8080";
     private int truckID;
-    private String truckStatus;
+    private String truckStatus = "active";
     private int collectedId = 0;
 
 /*
@@ -260,9 +260,6 @@ public class MainActivity extends AppCompatActivity implements
     This method initalizes the icons that will be used by the app.
 */
     private void initUIViews() {
-        /*activeIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.arrow_up_highlighted);
-        inactiveIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.arrow_up);
-        departureIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.ic_map_route_departure);*/
         destinationIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.ic_map_route_destination);
     }
 
@@ -287,9 +284,10 @@ public class MainActivity extends AppCompatActivity implements
 
         if (tomtomMap.getUserLocation() != null){
             tomtomMap.centerOnMyLocation();
+            currentLocation = tomtomMap.getUserLocation();
         }
 
-        String[] temp = sendAlertToServer();
+        String[] temp = sendAlertToServer("active");
 
         startButton.setVisibility(View.GONE);
         updateButton.setVisibility(View.VISIBLE);
@@ -303,14 +301,13 @@ public class MainActivity extends AppCompatActivity implements
     This method will ping the server to get the location that the truck should go to.
     This methods returns a LatLng value or null depending on if the journey has ended or will continue.
 */
-    public String[] sendAlertToServer() {
+    public String[] sendAlertToServer(String status) {
 
         try {
             String id = Integer.toString(truckID);
             String lat1 = String.format("%f", currentLocation.getLatitude());
             String long1 = String.format("%f", currentLocation.getLongitude());
             String collectedID = Integer.toString(collectedId);
-            String status = "active";
 
             String param = "/truck-status?id="+id+"&status="+status+"&Latitude="+lat1+"&Longitude="+long1;
 
@@ -335,12 +332,6 @@ public class MainActivity extends AppCompatActivity implements
 
             String[] t2 = in.split(" ");
             return t2;
-            /*collectedId = Integer.parseInt(t2[0]);
-            Double newLat = Double.parseDouble(t2[1]);
-            Double newLong = Double.parseDouble(t2[2]);
-
-
-            return new LatLng(newLat, newLong);*/
 
         } catch (Exception e){
         }
@@ -420,14 +411,13 @@ public class MainActivity extends AppCompatActivity implements
 
 
         try {
-            String[] result  = sendAlertToServer();
+            String[] result  = sendAlertToServer("active");
 
             if (result == null){
                 return;
             }
 
 
-            //collectedId = Integer.parseInt(result[0]);
             Double newLat = Double.parseDouble(result[1]);
             Double newLong = Double.parseDouble(result[2]);
 
