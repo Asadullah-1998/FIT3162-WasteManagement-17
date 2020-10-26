@@ -45,4 +45,5 @@ dependencies {
     implementation 'com.tomtom.online:sdk-routing:2.4458'
     implementation 'com.tomtom.online:sdk-search:2.4458'
     implementation 'com.tomtom.online:sdk-maps-ui-extensions:2.4458'
+    //implementation 'com.tomtom.online:sdk-maps-driving-extensions:2.4654'
 }

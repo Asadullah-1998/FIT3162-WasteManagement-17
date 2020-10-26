@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +25,6 @@ import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
 import com.google.common.io.ByteStreams;
 import com.tomtom.online.sdk.common.location.LatLng;
-import com.tomtom.online.sdk.location.LocationUpdateListener;
 import com.tomtom.online.sdk.map.CameraPosition;
 import com.tomtom.online.sdk.map.Icon;
 import com.tomtom.online.sdk.map.MapFragment;
@@ -56,55 +57,64 @@ import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements
-        LocationUpdateListener, OnMapReadyCallback, TomtomMapCallback.OnMapClickListener {
+        OnMapReadyCallback {
 
+    /*
+        These variables are related to the map plugin.
+            tomtomMap is a reference to the map plugin.
+            searchApi is the reference to the search api that will be used to search for points of interest.
+            routingApi is the reference to the API that will find the route between truck location and target location.
+            route contains the reference to the route between truck location and target location.
+
+            departurePosition is the latitude and longitude values of the position where the truck would depart from.
+            destinationPosition is the latitude and longitude values of the position where the truck is supposed to go to.
+            currentLocation will contain the reference to the current location of the truck/user.
+            destinationIcon is a reference to an icon which will represent the destination in the app.
+    */
     private TomtomMap tomtomMap;
     private SearchApi searchApi;
     private RoutingApi routingApi;
     private Route route;
     private LatLng departurePosition;
     private LatLng destinationPosition;
+    private Location currentLocation;
     private LatLng wayPointPosition;
-    private Icon departureIcon;
     private Icon destinationIcon;
 
 
-    private EditText addressEdit;
-    private String targetAddress;
+    /*
+        startButton contains the reference to the start button in the UI.
+        updateButton contains the reference to the update button in the UI.
 
-    private TextView mainView;
-
-    private Location currentLocation;
-    private Location targetLocation;
-
-
-    private int collectedId = 0;
-
-    private ActionBar ab;
+    */
+    private Button startButton;
+    private Button updateButton;
 
 
+    /*
+        These values represent the latitude and longitude range that the target location is supposed to be under.
+    */
+    private Double latUpperLimit = -30.0;
+    private Double latLowerLimit = -40.0;
+    private Double longUpperLimit = 150.0;
+    private Double longLowerLimit = 135.0;
+
+    /*
+        These variables are to be used by the app to connect to the server and transfer info to the server.
+
+        serverDomain is the domain of the server.
+        truckID is the id that is designated to the truck by the server. The server will identify the truck using this id.
+        collectedID is the id of the street that the truck last collected from.
+    */
     public String serverDomain = "ec2-54-252-219-65.ap-southeast-2.compute.amazonaws.com:8080";
     private int truckID;
     private String truckStatus;
+    private int collectedId = 0;
 
-
-    private TextView truckIDView;
-    private TextView truckLocationView;
-    private TextView destinationLocationView;
-
-    private LatLng[] pickUpLocations = new LatLng[10];
-
-    private LatLng[] pickUpLocations1 = new LatLng[3];
-
-
-
-    private double startLat = -37.907803;
-    private double startLong = 145.133957;
-
-    private int currentLocationIndex = 0;
-
-
-
+/*
+    This function is a method that is called when the activity first starts.
+    It sets up the activity and initializes all the necessary variables and registers the truck into the server.
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,11 +123,7 @@ public class MainActivity extends AppCompatActivity implements
 
         initTomTomServices();
         initUIViews();
-        setupUIViewListeners();
-        initPickUpLocations();
 
-
-        initSetViews();
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -125,100 +131,48 @@ public class MainActivity extends AppCompatActivity implements
             StrictMode.setThreadPolicy(policy);
         }
 
+
+        startButton = (Button) findViewById(R.id.startButton);
+        updateButton = (Button) findViewById(R.id.updateButton);
+
         registerTruck();
 
 
-
-
-
-
     }
 
-
-
-    public void initPickUpLocations(){
-        for (int i = 0; i < 10; i++){
-            LatLng tempLocation = new LatLng(startLat + i + 1, startLong + i + 1);
-            pickUpLocations[i] = tempLocation;
-        }
-
-        LatLng l = new LatLng(-37.8771, 145.0449);
-        LatLng l2 = new LatLng(-38.1526, 145.1361);
-        LatLng l3 = new LatLng(-36.1631, 145.1371);
-
-        pickUpLocations1[0] = l;
-        pickUpLocations1[1] = l2;
-        pickUpLocations1[2] = l3;
-
-    }
-
+/*
+    This method is an asynchronous method that is run when the map is initialized and ready.
+    This method will set up the necessary variables for the map.
+*/
     @Override
     public void onMapReady(@NonNull final TomtomMap tomtomMap) {
         this.tomtomMap = tomtomMap;
         this.tomtomMap.setMyLocationEnabled(true);
 
-        this.tomtomMap.addOnMapClickListener(this);
         this.tomtomMap.getMarkerSettings().setMarkersClustering(true);
 
     }
 
-    void setOnMapChangedListener(TomtomMapCallback.OnMapChangedListener onMapChangedListener){
-        if (tomtomMap.getUserLocation() != null){
-            mainView.setText("i AM INIT");
-        } else{
-            mainView.setText("i AM Not INIT");
-        }
-        tomtomMap.centerOnMyLocation();
-        centerOnLocation();
-    }
-
-    @Override
-    public void onMapClick(@NonNull LatLng latLng) {
-        if (tomtomMap.getUserLocation() != null) {
-            currentLocation = tomtomMap.getUserLocation();
-            tomtomMap.centerOnMyLocation();
-        }
-
-    }
-
-    public void startUpdate(){
-        currentLocation = tomtomMap.getUserLocation();
-        if (currentLocation != null){
-            tomtomMap.centerOnMyLocation();
-            centerOnLocation();
-        } else {
-            startUpdate();
-        }
-    }
-
-
-    public void onLocationChanged(Location location) {
-        currentLocation = tomtomMap.getUserLocation();
-        centerOnLocation();
-    }
-
-    public void setCurrentLocation(){
-        currentLocation = tomtomMap.getUserLocation();
-        if (currentLocation != null) {
-            String temp = String.format("%.4f, %.4f", currentLocation.getLatitude(), currentLocation.getLongitude());
-            truckLocationView.setText(temp);
-        }
-    }
-
+/*
+    This method checks if the user has granted access to internet and location of the user's device to the app.
+    If not it will request for access.
+*/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         this.tomtomMap.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    public void centerOnLocation(){
-        mainView.setText(tomtomMap.getUserLocation().toString());
-    }
-
+/*
+    This method checks if the destination position is set and returns the result.
+*/
     private boolean isDestinationPositionSet() {
         return destinationPosition != null;
     }
 
+/*
+    This method will create an icon on the target location that is passed in as variable.
+ */
     private void createMarkerIfNotPresent(LatLng position, Icon icon) {
         Optional<Marker> optionalMarker = tomtomMap.findMarkerByPosition(position);
         if (!optionalMarker.isPresent()) {
@@ -227,25 +181,41 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+/*
+    This method checks if the destination position is set and returns the result.
+*/
     private boolean isDeparturePositionSet() {
         return departurePosition != null;
     }
 
+
+/*
+    This method displays a toast which notifies the user of the error.
+*/
     private void handleApiError(Throwable e) {
         Toast.makeText(MainActivity.this, getString(R.string.api_response_error, e.getLocalizedMessage()), Toast.LENGTH_LONG).show();
     }
 
+/*
+    This method returns the route a vehicle would take depending on the waypoints that they have to stop at.
+*/
     private RouteQuery createRouteQuery(LatLng start, LatLng stop, LatLng[] wayPoints) {
         return (wayPoints != null) ?
                 new RouteQueryBuilder(start, stop).withWayPoints(wayPoints).withRouteType(RouteType.FASTEST).build() :
                 new RouteQueryBuilder(start, stop).withRouteType(RouteType.FASTEST).build();
     }
 
+/*
+    This method calls a helper method to draw a route between two locations on the map.
+ */
     private void drawRoute(LatLng start, LatLng stop) {
         wayPointPosition = null;
         drawRouteWithWayPoints(start, stop, null);
     }
 
+/*
+    This method will draw a route between two locations on the map using inbuilt methods from TomtomMaps API.
+ */
     private void drawRouteWithWayPoints(LatLng start, LatLng stop, LatLng[] wayPoints) {
         RouteQuery routeQuery = createRouteQuery(start, stop, wayPoints);
         routingApi.planRoute(routeQuery)
@@ -262,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements
                     private void displayRoutes(List<FullRoute> routes) {
                         for (FullRoute fullRoute : routes) {
                             route = tomtomMap.addRoute(new RouteBuilder(
-                                    fullRoute.getCoordinates()).startIcon(departureIcon).endIcon(destinationIcon));
+                                    fullRoute.getCoordinates()));
                         }
                     }
 
@@ -274,6 +244,10 @@ public class MainActivity extends AppCompatActivity implements
                 });
     }
 
+
+/*
+    This method initializes the map plugin and the required APIs from TomtomMaps API.
+*/
     private void initTomTomServices() {
         MapFragment mapFragment = (MapFragment) getSupportFragmentManager().findFragmentById(R.id.mapFragment);
         mapFragment.getAsyncMap(this);
@@ -282,90 +256,138 @@ public class MainActivity extends AppCompatActivity implements
         routingApi = OnlineRoutingApi.create(this);
     }
 
+/*
+    This method initalizes the icons that will be used by the app.
+*/
     private void initUIViews() {
-        departureIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.ic_map_route_departure);
+        /*activeIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.arrow_up_highlighted);
+        inactiveIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.arrow_up);
+        departureIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.ic_map_route_departure);*/
         destinationIcon = Icon.Factory.fromResources(MainActivity.this, R.drawable.ic_map_route_destination);
     }
-    private void setupUIViewListeners() {}
 
+
+/*
+    This method will clear the map.
+*/
     private void clearMap() {
         tomtomMap.clear();
+        tomtomMap.getDrivingSettings().stopTracking();
         departurePosition = null;
         destinationPosition = null;
         route = null;
     }
 
+/*
+    This method will be called by the start button of this activity.
+    This method will ping the server once to let the server know of the user's location.
+    This method will then hide the start button and display the update button.
+*/
+    public void startJourneyButton(View view){
 
-
-    public LatLng getLocationFromAddress(Context context, String strAddress){
-        Geocoder coder = new Geocoder(context);
-        List<Address> address;
-        LatLng p1 = null;
-
-        try {
-            address = coder.getFromLocationName(strAddress, 5);
-            if (address == null) {
-                return null;
-            }
-            Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        if (tomtomMap.getUserLocation() != null){
+            tomtomMap.centerOnMyLocation();
         }
-        return p1;
+
+        String[] temp = sendAlertToServer();
+
+        startButton.setVisibility(View.GONE);
+        updateButton.setVisibility(View.VISIBLE);
+
+
     }
 
-    public LatLng sendAlertToServer(String id, String lat, String long1, String status, String collectedID){
-        String param = "/truck-status?id="+id+"&status="+status+"&Latitude="+lat+"&Longitude="+long1;
 
-        if (!(collectedID.equals("0"))){
-            param = param +"&collected="+collectedID;
-        }
 
-        String temp = "http://"+serverDomain+param;
-
+/*
+    This method will ping the server to get the location that the truck should go to.
+    This methods returns a LatLng value or null depending on if the journey has ended or will continue.
+*/
+    public String[] sendAlertToServer() {
 
         try {
+            String id = Integer.toString(truckID);
+            String lat1 = String.format("%f", currentLocation.getLatitude());
+            String long1 = String.format("%f", currentLocation.getLongitude());
+            String collectedID = Integer.toString(collectedId);
+            String status = "active";
+
+            String param = "/truck-status?id="+id+"&status="+status+"&Latitude="+lat1+"&Longitude="+long1;
+
+            //Check if we have already collected from a street. If we have then we pass on the street's id to the server
+            if (!(collectedID.equals("0"))){
+                param = param +"&collected="+collectedID;
+            }
+
+            String temp = "http://"+serverDomain+param;
+
             String in = getInput(temp);
-            String text = mainView.getText().toString() + "\n";
-            mainView.setText(text + "" + in);
 
             String ok = "ok";
 
+            // check's the response from the server. if the response is ok. then it checks if we should end the journey or not.
             if (ok.equals(in.toLowerCase())){
                 if (!(collectedID.equals("0"))){
-                    mainView.setText("Journey is complete");
+                    endJourney();
                 }
                 return null;
             }
 
             String[] t2 = in.split(" ");
-            collectedId = Integer.parseInt(t2[0]);
+            return t2;
+            /*collectedId = Integer.parseInt(t2[0]);
             Double newLat = Double.parseDouble(t2[1]);
             Double newLong = Double.parseDouble(t2[2]);
 
-            return new LatLng(newLat, newLong);
+
+            return new LatLng(newLat, newLong);*/
 
         } catch (Exception e){
-            mainView.setText(e.toString());
         }
 
         return null;
     }
+
+
+/*
+    This method will end the journey and take us back to the starting activity
+*/
+    public void endJourney(){
+        Intent goToMain = new Intent(MainActivity.this, StartingActivity.class);
+        startActivity(goToMain);
+    }
+
+/*
+    This method will call the function endJourney.
+*/
+    public void endJourneyButton(View view){
+        endJourney();
+    }
+
+/*
+    This method will register the truck into the server.
+*/
 
     public void registerTruck(){
         String temp = "http://"+serverDomain+"/register-truck";
 
 
         String in = getInput(temp);
-        String text = mainView.getText().toString() + "\n";
-        mainView.setText(text+"Registration Number: "+in);
+
 
         truckID = Integer.parseInt(in);
+
+        if (truckID < 1){
+            registerTruck();
+        }
 
     }
 
 
+
+/*
+    This method will open the url of the server and read and return the hypertext in string format.
+*/
     public String getInput(String tempUrl){
 
 
@@ -375,14 +397,17 @@ public class MainActivity extends AppCompatActivity implements
 
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
             String tempReturn = new String(ByteStreams.toByteArray(in), Charsets.UTF_8);
-            mainView.setText(tempReturn);
             return tempReturn;
         } catch(Exception e){
-            mainView.setText(e.toString());
         }
         return null;
     }
 
+
+/*
+    This method will call the function sendAlertToServer() and then display the return LatLng on the map
+    and call emthod draw route to display a route between the truck location and target location on the map.
+*/
     public void updateButtonOnClick(View view){
 
         if (tomtomMap.getUserLocation() != null){
@@ -394,42 +419,35 @@ public class MainActivity extends AppCompatActivity implements
         departurePosition = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
 
 
-        createMarkerIfNotPresent(departurePosition, departureIcon);
-
-
         try {
-            String intString = Integer.toString(truckID);
-            String latString = String.format("%f", currentLocation.getLatitude());
-            String longString = String.format("%f", currentLocation.getLongitude());
-            String collectedString = Integer.toString(collectedId);
-            String text = mainView.getText().toString() + "\n";
-            mainView.setText(text+"Registration Number: "+ intString + latString + longString);
+            String[] result  = sendAlertToServer();
 
-
-            destinationPosition = sendAlertToServer(intString, latString, longString, "active", collectedString);
-
-            if (destinationPosition == null){
+            if (result == null){
                 return;
             }
 
-            createMarkerIfNotPresent(destinationPosition, destinationIcon);
-            drawRoute(departurePosition, destinationPosition);
+
+            //collectedId = Integer.parseInt(result[0]);
+            Double newLat = Double.parseDouble(result[1]);
+            Double newLong = Double.parseDouble(result[2]);
+
+
+            if ((newLong > longUpperLimit || newLong < longLowerLimit) ||
+                    (newLat > latUpperLimit || newLat < latLowerLimit)){
+                Toast.makeText(MainActivity.this, "Location is not in Melbourne", Toast.LENGTH_SHORT).show();
+            } else {
+                int tempID = Integer.parseInt(result[0]);
+                if (tempID > 0) {
+                    collectedId = tempID;
+                }
+                destinationPosition = new LatLng(newLat, newLong);
+                createMarkerIfNotPresent(destinationPosition, destinationIcon);
+                drawRoute(departurePosition, destinationPosition);
+            }
 
 
         } catch (Exception e){
-            String text = mainView.getText().toString() + "\n";
-            mainView.setText(e.toString());
+
         }
-
-
-
-    }
-
-
-
-
-
-    public void initSetViews(){
-        mainView = (TextView) findViewById(R.id.textViewMain);
     }
 }

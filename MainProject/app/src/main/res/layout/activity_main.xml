@@ -10,16 +10,7 @@
         android:id="@+id/mapFragment"
         android:name="com.tomtom.online.sdk.map.MapFragment"
         android:layout_width="match_parent"
-        android:layout_height="400dp"></fragment>
-
-    <TextView
-        android:id="@+id/textViewMain"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@drawable/topbox"
-        android:text="Status"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+        android:layout_height="565dp"></fragment>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,8 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="End"
-            android:background="#FF0000" />
+            android:background="#FF0000"
+            android:onClick="endJourneyButton"
+            android:text="End" />
 
         <Button
             android:id="@+id/updateButton"
@@ -41,7 +33,18 @@
             android:layout_weight="1"
             android:background="#90EE90"
             android:onClick="updateButtonOnClick"
-            android:text="Update" />
+            android:text="Update"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#90EE90"
+            android:onClick="startJourneyButton"
+            android:text="Start"
+            android:visibility="visible" />
 
     </LinearLayout>
 
