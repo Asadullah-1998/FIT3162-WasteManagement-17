@@ -360,16 +360,21 @@ public class MainActivity extends AppCompatActivity implements
 */
 
     public void registerTruck(){
-        String temp = "http://"+serverDomain+"/register-truck";
+
+        try {
+            String temp = "http://" + serverDomain + "/register-truck";
 
 
-        String in = getInput(temp);
+            String in = getInput(temp);
 
 
-        truckID = Integer.parseInt(in);
+            truckID = Integer.parseInt(in);
 
-        if (truckID < 1){
-            registerTruck();
+            if (truckID < 1) {
+                registerTruck();
+            }
+        } catch (Exception e){
+
         }
 
     }
